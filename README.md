@@ -1,67 +1,239 @@
-# Telco Connect B2B — Full Stack Telecom Platform
+# Telco Connect B2B — Plateforme Full Stack Télécom B2B
 
-Application web full stack simulant l’écosystème digital d’une entreprise télécom B2B : catalogue d’offres, extranet client, commandes, tickets support, dashboard administrateur et API REST sécurisée.
+Telco Connect B2B est une application web full stack qui simule une plateforme digitale pour une entreprise télécom B2B.
 
-Ce projet a été conçu comme un projet portfolio orienté métier, avec une logique proche d’un environnement réel : séparation des rôles, accès sécurisés, données métier, interface admin, espace client et simulation d’intégration CRM/ERP.
+L’application permet de présenter des offres télécom professionnelles, gérer des commandes, créer des tickets support et consulter un dashboard administrateur.
 
----
-
-## Aperçu du projet
-
-Telco Connect B2B permet à une entreprise télécom de présenter ses offres professionnelles et de gérer ses interactions clients depuis une plateforme centralisée.
-
-L’application contient deux espaces principaux :
-
-- **Espace administrateur** : supervision des commandes, tickets, statistiques et activité globale.
-- **Espace client** : consultation du catalogue, création de commandes et ouverture de tickets support.
+Ce projet a été réalisé comme projet portfolio pour montrer une architecture web complète avec un frontend React, un backend Node.js/Express, une API REST, une authentification JWT et une gestion des rôles.
 
 ---
 
 ## Fonctionnalités principales
 
-### Authentification et sécurité
+### Espace client
 
-- Connexion avec email et mot de passe
-- Génération d’un token JWT
-- Protection des routes privées
-- Gestion des rôles `ADMIN` et `CLIENT`
-- Accès différencié selon le profil connecté
+- Consulter le catalogue d’offres télécom
+- Créer une commande
+- Suivre ses commandes
+- Créer un ticket support
 
 ### Espace administrateur
 
-- Dashboard avec indicateurs clés
-- Nombre de clients
-- Nombre d’offres
-- Nombre de commandes
-- Nombre de tickets
-- Revenu simulé
-- Vue globale des commandes et tickets
+- Consulter un dashboard avec des statistiques
+- Suivre les commandes
+- Suivre les tickets support
+- Visualiser l’activité globale de la plateforme
 
-### Espace client
+### Authentification
 
-- Consultation du catalogue d’offres télécom
-- Création de commandes
-- Suivi des commandes
-- Création de tickets support
-- Interface extranet client
+- Connexion avec email et mot de passe
+- Authentification avec token JWT
+- Gestion des rôles `ADMIN` et `CLIENT`
+- Protection des routes privées
 
-### Catalogue B2B
+---
 
-- Offre Fibre Pro
-- Offre VoIP Business
-- Offre Cloud Backup
-- Offre Cyber Protection
+## Stack technique
 
-### Support technique
+### Frontend
 
-- Création de tickets
-- Priorité du ticket : basse, moyenne, haute
-- Suivi du statut
-- Visualisation côté client et côté admin
+- React
+- Vite
+- JavaScript
+- HTML
+- CSS
 
-### Intégration CRM / ERP simulée
+### Backend
 
-Le backend contient une route webhook permettant de simuler la réception de données depuis un outil externe :
+- Node.js
+- Express.js
+- API REST
+- JWT
+
+### Outils
+
+- Git
+- GitHub
+- npm
+
+---
+
+## Structure du projet
 
 ```txt
-POST /api/webhooks/crm
+telco-connect-b2b/
+│
+├── backend/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+│
+├── README.md
+└── .gitignore
+```
+
+---
+
+# Comment tester l’application en local
+
+Cette partie explique comment lancer le projet directement depuis un terminal.
+
+---
+
+## Prérequis
+
+Avant de lancer le projet, il faut avoir installé :
+
+- Git
+- Node.js
+- npm
+
+Pour vérifier :
+
+```bash
+git --version
+node -v
+npm -v
+```
+
+---
+
+## 1. Cloner le projet
+
+Dans un terminal :
+
+```bash
+git clone https://github.com/Hamza-dev-max/telco-connect-b2b.git
+cd telco-connect-b2b
+```
+
+Vérifier le contenu :
+
+```bash
+dir
+```
+
+Le projet doit contenir :
+
+```txt
+backend
+frontend
+README.md
+```
+
+---
+
+## 2. Lancer le backend
+
+Dans le premier terminal :
+
+```bash
+cd backend
+npm install
+npm start
+```
+
+Si `npm start` ne fonctionne pas :
+
+```bash
+npm run dev
+```
+
+Le backend doit rester ouvert dans ce terminal.
+
+Adresse du backend :
+
+```txt
+http://localhost:5000
+```
+
+---
+
+## 3. Lancer le frontend
+
+Ouvrir un deuxième terminal.
+
+Depuis la racine du projet :
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Ou directement :
+
+```bash
+cd telco-connect-b2b/frontend
+npm install
+npm run dev
+```
+
+Le frontend démarre normalement sur :
+
+```txt
+http://localhost:5173
+```
+
+---
+
+## 4. Ouvrir l’application
+
+Quand le backend et le frontend sont lancés, ouvrir dans le navigateur :
+
+```txt
+http://localhost:5173
+```
+
+---
+
+## Comment tester rapidement
+
+Une fois l’application ouverte :
+
+1. Tester la page de connexion
+2. Consulter le catalogue d’offres télécom
+3. Créer une commande
+4. Créer un ticket support
+5. Vérifier l’espace client
+6. Vérifier le dashboard administrateur si un compte admin est disponible
+
+---
+
+## Résultat attendu
+
+L’application doit afficher une interface web permettant de naviguer entre les différentes pages.
+
+Le frontend React communique avec le backend Express via une API REST.
+
+Le backend gère l’authentification, les rôles utilisateurs, les commandes, les tickets support et les données affichées dans le dashboard.
+
+---
+
+## Ce que ce projet démontre
+
+Ce projet démontre ma capacité à :
+
+- construire une application full stack ;
+- séparer clairement le frontend et le backend ;
+- créer une API REST avec Express.js ;
+- gérer une authentification avec JWT ;
+- mettre en place une gestion des rôles ;
+- développer une interface React avec Vite ;
+- organiser un projet web complet ;
+- présenter une logique métier proche d’un contexte professionnel.
+
+---
+
+## Auteur
+
+**Hamza Marzaq**
+
+- GitHub : https://github.com/Hamza-dev-max
+- LinkedIn : https://www.linkedin.com/in/hamza-marzaq
+- Portfolio : https://hamza-dev-max.github.io/portfolio/
